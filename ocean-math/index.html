@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐠 Ocean Math Quest!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient Ocean Background Elements -->
+  <div class="ocean-bg"></div>
+  <div class="rays"></div>
+  <div class="sand-floor"></div>
+  <div class="feedback-pop" id="feedback-pop">🎉</div>
+  <div class="streak-pop" id="streak-pop"><span class="sn" id="streak-num">3</span>🔥 Streak!</div>
+
+  <!-- Main Menu Screen -->
+  <div class="screen active" id="start">
+    <div class="logo">🌊 Ocean<br>Math Quest!</div>
+    <div class="sub">Catch the right fish to answer! 🐠</div>
+    <div class="start-card">
+      <h2>Choose your depth 🤿</h2>
+      <div class="level-btns">
+        <button class="lvl-btn" data-lv="1" onclick="pickLevel(1)">
+          <span class="lv-icon">🐡</span><span>Shallow</span>
+          <span style="font-size:0.7rem;color:rgba(200,240,255,0.5);font-weight:700">+  −<br>up to 20</span>
+        </button>
+        <button class="lvl-btn picked" data-lv="2" onclick="pickLevel(2)">
+          <span class="lv-icon">🐠</span><span>Midwater</span>
+          <span style="font-size:0.7rem;color:rgba(200,240,255,0.5);font-weight:700">+  −  ×<br>up to 50</span>
+        </button>
+        <button class="lvl-btn" data-lv="3" onclick="pickLevel(3)">
+          <span class="lv-icon">🦈</span><span>Deep Sea</span>
+          <span style="font-size:0.7rem;color:rgba(200,240,255,0.5);font-weight:700">All ops<br>up to 100</span>
+        </button>
+      </div>
+      <div class="sound-row">
+        <button class="sound-toggle" id="sound-btn" onclick="toggleSound()">🔊 Sound ON</button>
+      </div>
+      <button class="btn-play" onclick="startGame()">🐠 Dive In!</button>
+    </div>
+  </div>
+
+  <!-- Active Gameplay Screen -->
+  <div class="screen" id="game">
+    <div class="hud">
+      <div class="hud-item">⭐ <span id="hud-score">0</span></div>
+      <div class="hud-item">Q <span id="hud-q">1</span>/10</div>
+      <div class="hud-item">❤️ <span id="hud-lives">❤️❤️❤️</span></div>
+    </div>
+    <div class="timer-wrap">
+      <div class="timer-fill" id="timer-fill" style="width:100%"></div>
+    </div>
+    <div class="q-card">
+      <div class="q-badge" id="q-badge">Addition ➕</div>
+      <div class="q-text" id="q-text">— + — = <span class="q-mark">?</span></div>
+    </div>
+    <div class="fish-grid" id="fish-grid"></div>
+  </div>
+
+  <!-- End / Victory Screen -->
+  <div class="screen" id="win">
+    <div class="win-card">
+      <div class="win-trophy" id="win-trophy">🏆</div>
+      <div class="win-title" id="win-title">Incredible!</div>
+      <div class="win-sub" id="win-sub">You conquered the ocean!</div>
+      <div class="win-stars" id="win-stars">⭐⭐⭐</div>
+      <div class="stats-row">
+        <div class="stat-box"><span class="sv sv-teal" id="ws-c">0</span><span class="sl">Correct</span></div>
+        <div class="stat-box"><span class="sv sv-coral" id="ws-w">0</span><span class="sl">Wrong</span></div>
+        <div class="stat-box"><span class="sv sv-gold" id="ws-s">0</span><span class="sl">Score</span></div>
+      </div>
+      <button class="btn-again" onclick="startGame()">🌊 Play Again!</button>
+      <button class="btn-menu" onclick="showMenu()">Back to Menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

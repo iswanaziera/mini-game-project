@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Physics Fun! ⚡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="game">
+
+    <!-- QUIZ AREA -->
+    <div id="quizArea">
+      <div class="title">⚡ Physics Fun!</div>
+      <div class="subtitle">Learn about forces, light & more! 🔍</div>
+
+      <div class="score-row">
+        <div class="score-box">
+          <div class="label">⭐ Score</div>
+          <div class="value" id="scoreVal">0</div>
+        </div>
+        <div class="score-box">
+          <div class="label">❤️ Lives</div>
+          <div class="hearts" id="heartsVal">❤️❤️❤️</div>
+        </div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+
+      <span class="q-emoji" id="qEmoji">🔬</span>
+      <div class="q-text" id="qText">Loading...</div>
+
+      <div class="options" id="options"></div>
+      <div class="bubble" id="bubble"></div>
+      <button class="next-btn" id="nextBtn" onclick="nextQ()">Next ➡️</button>
+    </div>
+
+    <!-- END SCREEN -->
+    <div id="endScreen">
+      <span class="end-emoji" id="endEmoji">🏆</span>
+      <div class="end-title" id="endTitle">Well done!</div>
+      <div class="end-score" id="endScore"></div>
+      <span class="end-stars" id="endStars">⭐⭐⭐</span>
+      <div class="end-msg" id="endMsg"></div>
+      <button class="play-again" onclick="startGame()">🔄 Play Again!</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
