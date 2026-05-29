@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mission Bio-Matrix 🧬</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="matrix-card">
+
+    <div id="startScreen">
+      <div class="matrix-glitch-avatar">🧬</div>
+      <div class="cyber-title">BIO-MATRIX</div>
+      <div class="cyber-subtitle">SYSTEM INITIALIZATION v1.0</div>
+      
+      <div class="terminal-audio">
+        <button id="soundToggleBtn" class="cyber-audio-btn" onclick="toggleAudioSystem()">[ AUDIO: ENABLED ]</button>
+      </div>
+
+      <div class="terminal-log">
+        <p class="typing-text">> WARNING: Bio-Matrix core files corrupted. Habitat equilibrium collapsing. <br><br>> ACCESS OBJECTIVE: Advance through 3 security layers (Cells, Organs, Biosphere) to restore stability. Prevent node structural breakdown (3 Health Max).</p>
+      </div>
+      <button class="action-cyber-btn" onclick="initiateMatrix()">[ INITIATE OVERRIDE ]</button>
+    </div>
+
+    <div id="quizArea" style="display: none;">
+      <div class="layer-badge" id="levelBadge">LAYER 01 // CELLULAR_REPAIR</div>
+      
+      <div class="telemetry-grid">
+        <div class="telemetry-node">
+          <div class="node-tag">INTEGRITY</div>
+          <div class="node-data" id="scoreVal">000</div>
+        </div>
+        <div class="telemetry-node">
+          <div class="node-tag">NODES ACTIVE</div>
+          <div class="cyber-hearts" id="heartsVal">▲ ▲ ▲</div>
+        </div>
+      </div>
+
+      <div class="matrix-progress-track">
+        <div class="matrix-fill" id="trackBar"></div>
+      </div>
+
+      <div class="analysis-chamber">
+        <span class="chamber-glyph" id="qEmoji">🔬</span>
+        <div class="chamber-prompt" id="qText">Awaiting biometric data stream...</div>
+      </div>
+
+      <div class="matrix-options" id="options"></div>
+      <div class="terminal-feedback" id="bubble"></div>
+      <button class="next-sequence-btn" id="nextBtn" onclick="advanceSequence()">ADVANCE SEQUENCE >> </button>
+    </div>
+
+    <div id="endScreen" style="display: none;">
+      <span class="matrix-glitch-avatar" id="endEmoji">🛸</span>
+      <div class="cyber-title" id="endTitle">DEBRIEF COMPLETE</div>
+      <div class="node-data" id="endScore" style="margin: 15px 0; color: #39ff14;"></div>
+      <span class="cyber-stars" id="endStars">★★★</span>
+      <div class="terminal-log" id="endMsg" style="margin-top: 20px;"></div>
+      <button class="action-cyber-btn" style="background: transparent; color: #39ff14; border-color: #39ff14;" onclick="returnToMenu()">[ REBOOT SYSTEM ]</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

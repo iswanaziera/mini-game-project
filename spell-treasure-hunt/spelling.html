@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spell Voyage: Treasure Hunt! 🏴‍☠️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Boogaloo&family=Comfortaa:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="spell-style.css"/>
+</head>
+<body>
+
+  <div class="pirate-card">
+
+    <div id="startScreen">
+      <span class="pirate-avatar">🦜</span>
+      <div class="ship-title">Spell Voyage!</div>
+      <div class="ship-subtitle">The Great Spelling Treasure Hunt 💎</div>
+      
+      <div class="deck-audio">
+        <button id="soundToggleBtn" class="deck-btn" onclick="toggleSound()">🔊 Sound: ON</button>
+      </div>
+
+      <div class="captain-orders">
+        <p>Ahoy, young Explorer! Spot the correctly spelled words to steer our pirate ship safely to Treasure Island. Answer 10 words correctly and guard your 3 gold coins ❤️!</p>
+      </div>
+      <button class="sail-btn" onclick="startGame()">⚓ Set Sail!</button>
+    </div>
+
+    <div id="quizArea" style="display: none;">
+      <div class="ship-title" style="font-size: 2.2rem;">🏴‍☠️ Spell Voyage</div>
+
+      <div class="stats-bar">
+        <div class="stat-badge">
+          <div class="badge-title">💎 Gems</div>
+          <div class="badge-value" id="scoreVal">0</div>
+        </div>
+        <div class="stat-badge">
+          <div class="badge-title">🪙 Coins</div>
+          <div class="gold-hearts" id="heartsVal">❤️❤️❤️</div>
+        </div>
+      </div>
+
+      <div class="sea-track">
+        <div class="sailing-ship" id="pirateShip">⛵</div>
+      </div>
+
+      <div class="clue-deck">
+        <span class="clue-emoji" id="qEmoji">🦁</span>
+        <div class="clue-text" id="qText">Loading clue...</div>
+      </div>
+
+      <div class="spell-options" id="options"></div>
+      <div class="scroll-parchment" id="bubble"></div>
+      <button class="anchor-btn" id="nextBtn" onclick="nextQ()">Sail Ahead ➡️</button>
+    </div>
+
+    <div id="endScreen" style="display: none;">
+      <span class="pirate-avatar" id="endEmoji">🏆</span>
+      <div class="ship-title" id="endTitle">Island Reached!</div>
+      <div class="badge-value" id="endScore" style="margin: 15px 0; color: #d4a373;"></div>
+      <span class="island-stars" id="endStars">⭐⭐⭐</span>
+      <div class="captain-orders" id="endMsg" style="margin-top: 20px;"></div>
+      <button class="sail-btn" onclick="showStartScreen()">🏠 Return to Port</button>
+    </div>
+
+  </div>
+
+  <script src="spell-script.js"></script>
+</body>
+</html>

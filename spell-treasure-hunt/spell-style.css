@@ -1,0 +1,287 @@
+/* ── Playful Pirate Theme Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comfortaa', cursive;
+  background-color: #a8dadc;
+  /* Fun cartoon ocean wave pattern */
+  background-image: radial-gradient(circle at 100% 150%, #457b9d 24%, #a8dadc 24%, #a8dadc 28%, #457b9d 28%, #457b9d 36%, transparent 36%),
+                    radial-gradient(circle at 0% 150%, #457b9d 24%, #a8dadc 24%, #a8dadc 28%, #457b9d 28%, #457b9d 36%, transparent 36%);
+  background-size: 40px 40px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ── Cartoon Card ── */
+.pirate-card {
+  background: #fdf0d5;
+  border: 4px dashed #780000;
+  border-radius: 24px;
+  padding: 35px 25px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 12px 0 #580000, 0 15px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* ── Typography ── */
+.ship-title {
+  font-family: 'Boogaloo', cursive;
+  font-size: 3rem;
+  color: #780000;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+}
+
+.ship-subtitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #669bbc;
+  margin-bottom: 25px;
+}
+
+.pirate-avatar {
+  font-size: 5.5rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: shipSway 2s ease-in-out infinite alternate;
+}
+
+@keyframes shipSway {
+  from { transform: rotate(-5deg) translateY(0); }
+  to { transform: rotate(5deg) translateY(-5px); }
+}
+
+/* ── Deck Audio ── */
+.deck-audio {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.deck-btn {
+  background: #669bbc;
+  border: none;
+  color: white;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 8px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #41729f;
+}
+
+.deck-btn.muted {
+  background: #a8a8a8;
+  box-shadow: 0 3px 0 #787878;
+}
+
+/* ── Captain Instructions Paper ── */
+.captain-orders {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #c1121f;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 25px;
+}
+
+.captain-orders p {
+  color: #780000;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* ── Main Sail Action Button ── */
+.sail-btn {
+  width: 100%;
+  background: #c1121f;
+  color: white;
+  font-family: 'Boogaloo', cursive;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  border: none;
+  padding: 14px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #780000;
+  transition: transform 0.1s;
+}
+
+.sail-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 #780000;
+}
+
+/* ── Score Badges ── */
+.stats-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.stat-badge {
+  flex: 1;
+  background: #f1faee;
+  padding: 10px;
+  border-radius: 16px;
+  border: 2px solid #e63946;
+}
+
+.badge-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a8dadc;
+  text-transform: uppercase;
+}
+
+.badge-value {
+  font-family: 'Boogaloo', cursive;
+  font-size: 2rem;
+  color: #1d3557;
+  line-height: 1.1;
+}
+
+.gold-hearts {
+  font-size: 1.25rem;
+  margin-top: 2px;
+}
+
+/* ── Visual Sailing Track ── */
+.sea-track {
+  width: 100%;
+  height: 24px;
+  background: #669bbc;
+  border-radius: 30px;
+  margin-bottom: 25px;
+  position: relative;
+  border: 2px solid #003049;
+  overflow: visible;
+}
+
+.sailing-ship {
+  font-size: 1.6rem;
+  position: absolute;
+  top: -12px;
+  left: 0%;
+  transition: left 0.5s ease-in-out;
+}
+
+/* ── Clue Viewport Box ── */
+.clue-deck {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 3px solid #f1a7a6;
+}
+
+.clue-emoji {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.clue-text {
+  font-size: 1.15rem;
+  color: #003049;
+  font-weight: 700;
+}
+
+/* ── Spelling Alternative Buttons ── */
+.spell-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.spell-tile {
+  background: white;
+  border: 3px solid #fdf0d5;
+  border-radius: 16px;
+  padding: 14px;
+  font-family: 'Comfortaa', cursive;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #003049;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #d8c39d;
+  transition: transform 0.1s;
+}
+
+.spell-tile:hover:not(:disabled) {
+  background: #fffdf9;
+  transform: translateY(-2px);
+}
+
+/* Correct Answer Accentuation */
+.spell-tile.spell-correct {
+  background: #d8f3dc !important;
+  border-color: #52b788 !important;
+  color: #1b4332 !important;
+  box-shadow: 0 4px 0 #40916c !important;
+}
+
+/* Incorrect Answer Accentuation */
+.spell-tile.spell-wrong {
+  background: #ffccd5 !important;
+  border-color: #ff4d6d !important;
+  color: #800f2f !important;
+  box-shadow: 0 4px 0 #c9184a !important;
+}
+
+/* ── Parchment Message Bubble ── */
+.scroll-parchment {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: none;
+}
+
+.scroll-parchment.parchment-correct { display: block; background: #d8f3dc; color: #1b4332; }
+.scroll-parchment.parchment-wrong { display: block; background: #ffccd5; color: #800f2f; }
+
+/* ── Anchor Button ── */
+.anchor-btn {
+  display: none;
+  margin-top: 15px;
+  width: 100%;
+  background: #780000;
+  color: white;
+  font-family: 'Boogaloo', cursive;
+  font-size: 1.5rem;
+  border: none;
+  padding: 12px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #400000;
+}
+
+.island-stars {
+  font-size: 2.5rem;
+  display: block;
+}
+
+/* ── Flying Sparkles ── */
+.gold-sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.8rem;
+  z-index: 100;
+  animation: explodeOut 0.8s ease-out forwards;
+}
+
+@keyframes explodeOut {
+  0% { opacity: 1; transform: scale(0.5); }
+  100% { opacity: 0; transform: translateY(-50px) scale(1.3); }
+}

@@ -106,6 +106,49 @@ const OPTION_ICONS = ["🔴", "🟡", "🟢", "🔵"];
 const CONFETTI_ICONS = ["🐸", "⭐", "🚂", "🎈", "🌟", "🎉", "🦄", "🏆", "💥", "🍭"];
 
 // ═══════════════════════════════════════════
+//  AUDIO ENGINE & TOGGLE STATE
+// ═══════════════════════════════════════════
+
+let ctx = null;
+let isSoundOn = true; // Tracks global sound configuration state
+
+function getCtx() { 
+  if(!ctx) ctx = new(window.AudioContext || window.webkitAudioContext)(); 
+  return ctx; 
+}
+
+function toggleSound() {
+  isSoundOn = !isSoundOn;
+  const btn = document.getElementById("soundToggleBtn");
+  
+  if (isSoundOn) {
+    btn.textContent = "🔊 Sound ON";
+    btn.classList.remove("muted");
+    soundClick();
+  } else {
+    btn.textContent = "🔇 Sound OFF";
+    btn.classList.add("muted");
+  }
+}
+
+function playTone(freq, type, dur, vol, delay = 0) {
+  if (!isSoundOn) return; // Instantly silence if user requested Sound OFF
+  try {
+    const ac = getCtx(), osc = ac.createOscillator(), gain = ac.createGain();
+    osc.connect(gain); gain.connect(ac.destination);
+    osc.type = type; osc.frequency.setValueAtTime(freq, ac.currentTime + delay);
+    gain.gain.setValueAtTime(vol, ac.currentTime + delay);
+    gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + delay + dur);
+    osc.start(ac.currentTime + delay); osc.stop(ac.currentTime + delay + dur);
+  } catch(e){}
+}
+
+const soundCorrect = () => { playTone(523, 'sine', 0.12, 0.3); playTone(659, 'sine', 0.12, 0.3, 0.08); playTone(784, 'sine', 0.2, 0.3, 0.16); };
+const soundWrong   = () => { playTone(280, 'sawtooth', 0.08, 0.2); playTone(190, 'sawtooth', 0.15, 0.2, 0.08); };
+const soundClick   = () => playTone(600, 'sine', 0.05, 0.15);
+const soundWin     = () => [523, 587, 659, 698, 784, 880, 988, 1047].forEach((f, i) => playTone(f, 'sine', 0.18, 0.2, i * 0.06));
+
+// ═══════════════════════════════════════════
 //  GAME STATE
 // ═══════════════════════════════════════════
 
@@ -123,9 +166,20 @@ function shuffle(array) {
   let arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
+    [arr[j], arr[i]] = [arr[i], arr[j]];
   }
   return arr;
+}
+
+// ═══════════════════════════════════════════
+//  SHOW MAIN MENU
+// ═══════════════════════════════════════════
+function showStartScreen() {
+  soundClick();
+  document.getElementById("endScreen").style.display = "none";
+  document.getElementById("endScreen").classList.remove("show");
+  document.getElementById("quizArea").style.display = "none";
+  document.getElementById("startScreen").style.display = "block";
 }
 
 // ═══════════════════════════════════════════
@@ -133,13 +187,14 @@ function shuffle(array) {
 // ═══════════════════════════════════════════
 
 function startGame() {
+  soundClick();
   deck = shuffle(ALL_QUESTIONS).slice(0, TOTAL_QUESTIONS);
   currentIndex = 0;
   score = 0;
   lives = 3;
   answered = false;
 
-  // Show quiz, hide end screen
+  document.getElementById("startScreen").style.display = "none";
   document.getElementById("endScreen").classList.remove("show");
   document.getElementById("endScreen").style.display = "none";
   document.getElementById("quizArea").style.display = "block";
@@ -171,25 +226,20 @@ function buildDots() {
 
 function loadQuestion() {
   answered = false;
-
   const q = deck[currentIndex];
 
-  // Restart emoji animation
   const emojiEl = document.getElementById("qEmoji");
   emojiEl.style.animation = "none";
-  void emojiEl.offsetWidth; // force reflow
+  void emojiEl.offsetWidth; 
   emojiEl.style.animation = "boing 1.8s ease-in-out infinite alternate";
   emojiEl.textContent = q.emoji;
 
-  // Set question text
   document.getElementById("qText").textContent = q.question;
 
-  // Reset feedback and next button
   document.getElementById("bubble").className = "bubble";
   document.getElementById("bubble").textContent = "";
   document.getElementById("nextBtn").className = "next-btn";
 
-  // Update dots
   for (let i = 0; i < TOTAL_QUESTIONS; i++) {
     const dot = document.getElementById("dot" + i);
     if (i < currentIndex) {
@@ -201,7 +251,6 @@ function loadQuestion() {
     }
   }
 
-  // Build option buttons
   const optionsContainer = document.getElementById("options");
   optionsContainer.innerHTML = "";
 
@@ -228,15 +277,14 @@ function pickAnswer(chosen, correct) {
   const bubble = document.getElementById("bubble");
 
   if (chosen === correct) {
-    // Correct!
+    soundCorrect();
     buttons[chosen].classList.add("correct");
     score += POINTS_PER_CORRECT;
     bubble.className = "bubble good show";
     bubble.textContent = "✅ Great job! That is correct! 🎉";
     spawnConfetti();
-
   } else {
-    // Wrong
+    soundWrong();
     buttons[chosen].classList.add("wrong");
     buttons[correct].classList.add("correct");
     lives--;
@@ -258,7 +306,7 @@ function pickAnswer(chosen, correct) {
 // ═══════════════════════════════════════════
 
 function nextQ() {
-  // Mark current dot as done
+  soundClick();
   document.getElementById("dot" + currentIndex).className = "dot done";
   currentIndex++;
 
@@ -288,6 +336,7 @@ function updateHUD() {
 // ═══════════════════════════════════════════
 
 function endGame() {
+  soundWin();
   document.getElementById("quizArea").style.display = "none";
 
   const endScreen = document.getElementById("endScreen");
@@ -343,5 +392,4 @@ function spawnConfetti() {
 // ═══════════════════════════════════════════
 //  KICK OFF
 // ═══════════════════════════════════════════
-
-startGame();
+showStartScreen();

@@ -1,0 +1,321 @@
+/* ── High-Contrast Cyber-Matrix Structural Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #030708;
+  /* Glowing Cyber-Grid Lines */
+  background-image: linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+  background-size: 25px 25px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ── Angular Sharp Cyber-Card Container ── */
+.matrix-card {
+  background: #060d12;
+  border: 3px solid #00f0ff;
+  border-radius: 0px; /* Sharp outlines as requested */
+  padding: 40px 30px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+  position: relative;
+}
+
+/* Corner brackets decoration for high-tech aesthetic */
+.matrix-card::before {
+  content: '';
+  position: absolute;
+  top: -8px; left: -8px; width: 20px; height: 20px;
+  border-top: 4px solid #39ff14; border-left: 4px solid #39ff14;
+}
+
+/* ── Typography Elements ── */
+.cyber-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: #39ff14; /* Hot Bio-Neon Green */
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+  margin-bottom: 4px;
+}
+
+.cyber-subtitle {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #00f0ff; /* Electric Blue */
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+}
+
+.matrix-glitch-avatar {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px 0px #ff0055, -3px -3px 0px #00f0ff;
+  animation: glitchPulse 2.5s infinite steps(2);
+}
+
+@keyframes glitchPulse {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(2px, -1px) scale(1.05); }
+}
+
+/* ── System Audio Controller ── */
+.terminal-audio {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.cyber-audio-btn {
+  background: transparent;
+  border: 1px solid #00f0ff;
+  color: #00f0ff;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  padding: 6px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cyber-audio-btn:hover {
+  background: rgba(0, 240, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.cyber-audio-btn.disabled-audio {
+  border-color: #ff0055;
+  color: #ff0055;
+}
+
+/* ── Cyber Terminal Log Display ── */
+.terminal-log {
+  background: #020406;
+  border: 1px solid #1a3644;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.terminal-log p {
+  color: #b3d1db;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* ── Primary Action Systems Buttons ── */
+.action-cyber-btn {
+  width: 100%;
+  background: #39ff14;
+  color: #000000;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  border: none;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 1px;
+}
+
+.action-cyber-btn:hover {
+  background: #ffffff;
+  box-shadow: 0 0 20px #ffffff;
+}
+
+/* ── Stage Identity Indicators ── */
+.layer-badge {
+  border: 1px solid #ff0055; /* Warning Hot Pink */
+  color: #ff0055;
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 6px 16px;
+  display: inline-block;
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+  background: rgba(255, 0, 85, 0.05);
+}
+
+/* ── Telemetry Dashboard Layout ── */
+.telemetry-grid {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.telemetry-node {
+  flex: 1;
+  background: #03080b;
+  padding: 12px;
+  border: 1px solid #1a3644;
+  text-align: left;
+}
+
+.node-tag {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #537e8b;
+  letter-spacing: 1px;
+}
+
+.node-data {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #00f0ff;
+  line-height: 1.2;
+  margin-top: 4px;
+}
+
+.cyber-hearts {
+  font-size: 1.4rem;
+  color: #ff0055;
+  margin-top: 4px;
+  letter-spacing: 3px;
+}
+
+/* ── Precision Track Progress Line ── */
+.matrix-progress-track {
+  width: 100%;
+  height: 6px;
+  background: #111e24;
+  margin-bottom: 30px;
+}
+
+.matrix-fill {
+  width: 0%;
+  height: 100%;
+  background: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  transition: width 0.3s ease-out;
+}
+
+/* ── Matrix Analysis Chamber Viewport ── */
+.analysis-chamber {
+  background: #020507;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-left: 4px solid #00f0ff;
+  border-right: 1px solid #1a3644;
+  border-top: 1px solid #1a3644;
+  border-bottom: 1px solid #1a3644;
+  text-align: left;
+}
+
+.chamber-glyph {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.chamber-prompt {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/* ── Matrix Multiple Choice Tile Grid ── */
+.matrix-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.matrix-tile {
+  background: #091319;
+  border: 1px solid #1a3644;
+  padding: 15px 20px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.15rem;
+  color: #b3d1db;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.matrix-tile:hover:not(:disabled) {
+  background: rgba(0, 240, 255, 0.05);
+  border-color: #00f0ff;
+  color: #00f0ff;
+}
+
+/* Integrity Validation States */
+.matrix-tile.node-verified {
+  background: rgba(57, 255, 20, 0.1) !important;
+  border-color: #39ff14 !important;
+  color: #39ff14 !important;
+  font-weight: bold;
+}
+
+.matrix-tile.node-corrupted {
+  background: rgba(255, 0, 85, 0.1) !important;
+  border-color: #ff0055 !important;
+  color: #ff0055 !important;
+  font-weight: bold;
+}
+
+/* ── Live Feedback Telemetry Output ── */
+.terminal-feedback {
+  margin-top: 20px;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-align: left;
+  display: none;
+  border-left: 3px solid transparent;
+}
+
+.terminal-feedback.feed-success { display: block; background: #07140b; color: #39ff14; border-color: #39ff14; }
+.terminal-feedback.feed-error { display: block; background: #1c0810; color: #ff0055; border-color: #ff0055; }
+
+/* ── Next Track Advancement Switch ── */
+.next-sequence-btn {
+  display: none;
+  margin-top: 20px;
+  width: 100%;
+  background: transparent;
+  color: #00f0ff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  border: 1px solid #00f0ff;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.next-sequence-btn:hover {
+  background: rgba(0, 240, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.cyber-stars {
+  font-size: 2.2rem;
+  color: #ffb703;
+  display: block;
+  letter-spacing: 5px;
+}
+
+/* ── Floating Neon Micro Particles ── */
+.cyber-sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.6rem;
+  z-index: 999;
+  animation: dataBurst 0.8s cubic-bezier(0.08, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes dataBurst {
+  0% { opacity: 1; transform: scale(0.4) translateY(0); }
+  100% { opacity: 0; transform: scale(1.3) translateY(-60px); }
+}

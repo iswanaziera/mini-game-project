@@ -1,0 +1,359 @@
+/* ── Deep Cyber Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: #05080c;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* ── Neon Main Interface Card ── */
+.cyber-container {
+  background: rgba(10, 16, 26, 0.85);
+  border: 2px solid #00d4ff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.25), inset 0 0 15px rgba(0, 212, 255, 0.1);
+  text-align: center;
+  position: relative;
+}
+
+/* ── Glowing UI Typography ── */
+.glitch-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  color: #00ff9d;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px rgba(0, 255, 157, 0.6);
+  margin-bottom: 5px;
+}
+
+.matrix-header {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #00d4ff;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+  margin-bottom: 5px;
+}
+
+.sub-monitors {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #6c7d93;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/* ── Reactor Animation Core ── */
+.reactor-core {
+  font-size: 5rem;
+  display: inline-block;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 157, 0.6));
+  animation: fluxPulse 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes fluxPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(0,255,157,0.4)); }
+  50% { transform: scale(1.08); filter: drop-shadow(0 0 25px rgba(0,255,157,0.8)); }
+}
+
+/* ── Audio Control ── */
+.audio-panel {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.cyber-audio-btn {
+  background: transparent;
+  border: 1px solid #00d4ff;
+  color: #00d4ff;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.cyber-audio-btn:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.cyber-audio-btn.muted {
+  border-color: #ff5c5c;
+  color: #ff5c5c;
+}
+
+.cyber-audio-btn.muted:hover {
+  background: rgba(255, 92, 92, 0.1);
+  box-shadow: 0 0 10px rgba(255, 92, 92, 0.3);
+}
+
+/* ── Mission Briefing Block ── */
+.mission-briefing {
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 4px solid #00ff9d;
+  padding: 20px;
+  text-align: left;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 30px;
+}
+
+.mission-briefing p {
+  color: #b0c4de;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* ── Launch Action Button ── */
+.initiate-btn {
+  width: 100%;
+  background: #00ff9d;
+  color: #05080c;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  border: none;
+  padding: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.4);
+  transition: all 0.15s ease;
+}
+
+.initiate-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 0 25px rgba(0, 255, 157, 0.7);
+}
+
+.initiate-btn:active {
+  transform: translateY(1px);
+}
+
+/* ── HUD Nodes ── */
+.hud-display {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.hud-node {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #1a293d;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.hud-tag {
+  display: block;
+  font-size: 0.75rem;
+  color: #6c7d93;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 3px;
+}
+
+.neon-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  color: #00ff9d;
+  text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+.shields-glow {
+  font-size: 1.2rem;
+}
+
+/* ── Digital Grid Array (Progress) ── */
+.matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 6px;
+  margin-bottom: 25px;
+}
+
+.matrix-node {
+  height: 8px;
+  background: #141f2e;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.matrix-node.verified {
+  background: #00ff9d;
+  box-shadow: 0 0 8px #00ff9d;
+}
+
+.matrix-node.current {
+  background: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
+  animation: nodeBlink 1s infinite alternate;
+}
+
+@keyframes nodeBlink {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* ── Chamber Viewport ── */
+.specimen-chamber {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px dashed #00d4ff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.element-reaction {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.analysis-readout {
+  font-size: 1.3rem;
+  color: #e0f2f1;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ── Interactive Cyber Option Blocks ── */
+.matrix-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.matrix-tile {
+  background: rgba(16, 26, 43, 0.6);
+  border: 1px solid #1c324e;
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #cce3ff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.matrix-tile:hover:not(:disabled) {
+  border-color: #00d4ff;
+  background: rgba(0, 212, 255, 0.08);
+  box-shadow: inset 0 0 8px rgba(0, 212, 255, 0.2);
+}
+
+.tile-tag {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.75rem;
+  color: #00d4ff;
+  border: 1px solid rgba(0, 212, 255, 0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 15px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.tile-label-text {
+  flex-grow: 1;
+}
+
+/* Verification State Structuring */
+.matrix-tile.synthesized {
+  background: rgba(0, 255, 157, 0.1) !important;
+  border-color: #00ff9d !important;
+  color: #00ff9d !important;
+  box-shadow: 0 0 12px rgba(0, 255, 157, 0.2) !important;
+}
+
+.matrix-tile.ruptured {
+  background: rgba(255, 92, 92, 0.1) !important;
+  border-color: #ff5c5c !important;
+  color: #ff5c5c !important;
+  box-shadow: 0 0 12px rgba(255, 92, 92, 0.2) !important;
+}
+
+/* ── Terminal Alerts Console ── */
+.terminal-alert {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: monospace;
+  font-weight: bold;
+  display: none;
+}
+
+.terminal-alert.secure-log { display: block; background: rgba(0, 255, 157, 0.05); color: #00ff9d; border: 1px solid rgba(0, 255, 157, 0.2); }
+.terminal-alert.failure-log { display: block; background: rgba(255, 92, 92, 0.05); color: #ff5c5c; border: 1px solid rgba(255, 92, 92, 0.2); }
+
+/* ── Advance Execution Button ── */
+.advance-btn {
+  display: none;
+  margin-top: 15px;
+  width: 100%;
+  background: #00d4ff;
+  color: #05080c;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+}
+
+/* ── Results Star Grid ── */
+.matrix-stars {
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  filter: drop-shadow(0 0 8px #ffb703);
+  display: block;
+}
+
+/* ── Quantum Confetti System ── */
+.quantum-spark {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.5rem;
+  z-index: 1000;
+  animation: burstScatter 0.8s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes burstScatter {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--x), var(--y)) scale(0.5); }
+}

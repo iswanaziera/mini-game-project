@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chemistry Lab: Neon Matcher 🧪</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="chem-style.css"/>
+</head>
+<body>
+
+  <div class="cyber-container">
+
+    <div id="startScreen">
+      <div class="reactor-core">🧪</div>
+      <h1 class="glitch-title">NEON LAB</h1>
+      <p class="sub-monitors">SYSTEM STATUS: READY FOR SYNTHESIS 💎</p>
+      
+      <div class="audio-panel">
+        <button id="soundToggleBtn" class="cyber-audio-btn" onclick="toggleSound()">🔊 AUDIO: ON</button>
+      </div>
+
+      <div class="mission-briefing">
+        <p>LAB DATA ACQUISITION PROTOCOL: Match everyday materials to their correct elemental matrix. Maintain your 3 plasma shields ❤️ to protect lab stability.</p>
+      </div>
+      <button class="initiate-btn" onclick="startGame()">🚀 INITIATE MATRIX</button>
+    </div>
+
+    <div id="quizArea" style="display: none;">
+      <h1 class="matrix-header">⚡ NEON CORE EXPERIMENT</h1>
+      <p class="sub-monitors">ANALYSING CHEMICAL ELEMENTS...</p>
+
+      <div class="hud-display">
+        <div class="hud-node">
+          <span class="hud-tag">⭐ MATRIX SCORE</span>
+          <span class="hud-data neon-text" id="scoreVal">0</span>
+        </div>
+        <div class="hud-node">
+          <span class="hud-tag">❤️ SHIELD CELLS</span>
+          <span class="hud-data shields-glow" id="heartsVal">❤️❤️❤️</span>
+        </div>
+      </div>
+
+      <div class="matrix-grid" id="dots"></div>
+
+      <div class="specimen-chamber">
+        <span class="element-reaction" id="qEmoji">🔬</span>
+        <div class="analysis-readout" id="qText">INITIALISING ANALYSIS...</div>
+      </div>
+
+      <div class="matrix-options" id="options"></div>
+      <div class="terminal-alert" id="bubble"></div>
+      <button class="advance-btn" id="nextBtn" onclick="nextQ()">ADVANCE ANALYSIS ➡️</button>
+    </div>
+
+    <div id="endScreen" style="display: none;">
+      <span class="reactor-core" id="endEmoji">🏆</span>
+      <h1 class="glitch-title" id="endTitle">SYNTHESIS COMPLETE</h1>
+      <div class="hud-data neon-text" id="endScore" style="font-size: 1.8rem; margin: 15px 0;"></div>
+      <span class="matrix-stars" id="endStars">⭐⭐⭐</span>
+      <div class="mission-briefing" id="endMsg" style="margin-top: 20px;"></div>
+      <button class="initiate-btn" style="background: #00d4ff; box-shadow: 0 0 15px #00d4ff;" onclick="showStartScreen()">🏠 TERMINAL HOME</button>
+    </div>
+
+  </div>
+
+  <script src="chem-script.js"></script>
+</body>
+</html>

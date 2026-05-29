@@ -4,15 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Physics Fun! ⚡</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght=700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
   <div class="game">
 
-    <!-- QUIZ AREA -->
-    <div id="quizArea">
+    <div id="startScreen">
+      <span class="start-emoji">⚡</span>
+      <div class="title">Physics Fun!</div>
+      <div class="subtitle">Learn about forces, light & more! 🔍</div>
+      
+      <div class="sound-control-wrapper">
+        <button id="soundToggleBtn" class="sound-toggle-btn" onclick="toggleSound()">🔊 Sound ON</button>
+      </div>
+
+      <div class="welcome-box">
+        <p>Ready to test your science superpowers? Answer 10 physics questions and protect your 3 hearts! ❤️</p>
+      </div>
+      <button class="launch-btn" onclick="startGame()">🚀 Launch Quiz!</button>
+    </div>
+
+    <div id="quizArea" style="display: none;">
       <div class="title">⚡ Physics Fun!</div>
       <div class="subtitle">Learn about forces, light & more! 🔍</div>
 
@@ -37,14 +51,13 @@
       <button class="next-btn" id="nextBtn" onclick="nextQ()">Next ➡️</button>
     </div>
 
-    <!-- END SCREEN -->
-    <div id="endScreen">
+    <div id="endScreen" style="display: none;">
       <span class="end-emoji" id="endEmoji">🏆</span>
       <div class="end-title" id="endTitle">Well done!</div>
       <div class="end-score" id="endScore"></div>
       <span class="end-stars" id="endStars">⭐⭐⭐</span>
       <div class="end-msg" id="endMsg"></div>
-      <button class="play-again" onclick="startGame()">🔄 Play Again!</button>
+      <button class="play-again" onclick="showStartScreen()">🏠 Main Menu</button>
     </div>
 
   </div>

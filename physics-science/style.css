@@ -27,6 +27,100 @@ body {
   text-align: center;
 }
 
+/* ── Start Screen Layout ── */
+#startScreen {
+  padding: 10px 5px;
+}
+
+.start-emoji {
+  font-size: 5.5rem;
+  display: block;
+  margin-bottom: 15px;
+  animation: boing 1.8s ease-in-out infinite alternate;
+}
+
+/* Sound Toggle Control Styling */
+.sound-control-wrapper {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.sound-toggle-btn {
+  background: #4cc9f0;
+  border: none;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 10px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #3a9dbd;
+  transition: all 0.1s ease;
+}
+
+.sound-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 #3a9dbd;
+}
+
+.sound-toggle-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #3a9dbd;
+}
+
+.sound-toggle-btn.muted {
+  background: #a0a0a0;
+  box-shadow: 0 4px 0 #787878;
+}
+
+.sound-toggle-btn.muted:hover {
+  box-shadow: 0 5px 0 #787878;
+}
+
+.sound-toggle-btn.muted:active {
+  box-shadow: 0 1px 0 #787878;
+}
+
+.welcome-box {
+  background: #fff7e6;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px 0 25px 0;
+}
+
+.welcome-box p {
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.launch-btn {
+  width: 100%;
+  background: #06d6a0;
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  border: none;
+  padding: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #04a07a;
+  transition: all 0.15s ease;
+}
+
+.launch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #04a07a;
+}
+
+.launch-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #04a07a;
+}
+
 /* ── Title ── */
 .title {
   font-family: 'Fredoka One', cursive;
@@ -289,7 +383,7 @@ body {
 }
 
 .play-again {
-  background: #06d6a0;
+  background: #ff6b35;
   color: white;
   font-family: 'Fredoka One', cursive;
   font-size: 1.4rem;
@@ -297,7 +391,7 @@ body {
   padding: 16px 48px;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0 5px 0 #04a07a;
+  box-shadow: 0 5px 0 #c94a18;
   transition: all 0.15s ease;
 }
 
@@ -307,7 +401,7 @@ body {
 
 .play-again:active {
   transform: translateY(3px);
-  box-shadow: 0 2px 0 #04a07a;
+  box-shadow: 0 2px 0 #c94a18;
 }
 
 /* ── Confetti particles ── */

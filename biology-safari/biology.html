@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bio-Safari: Ecosystem Rescue! 🌿</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nunito:wght@700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="bio-style.css"/>
+</head>
+<body>
+
+  <div class="safari-card">
+
+    <div id="startScreen">
+      <span class="safari-avatar">🧭</span>
+      <div class="safari-title">Bio-Safari</div>
+      <div class="safari-subtitle">Ecosystem Rescue Mission 🐒</div>
+      
+      <div class="audio-deck">
+        <button id="soundToggleBtn" class="safari-audio-btn" onclick="toggleSound()">🔊 Sound: ON</button>
+      </div>
+
+      <div class="briefing-scroll">
+        <p>Welcome, Ranger! Destructive forces are threatening world habitats. Answer vital biology questions to unlock all 3 levels and restore wildlife balance. Keep your 3 health hearts ❤️ safe!</p>
+      </div>
+      <button class="safari-btn" onclick="startGame()">🥾 Start Expedition</button>
+    </div>
+
+    <div id="quizArea" style="display: none;">
+      <div class="level-indicator" id="levelBadge">LEVEL 1: RAIN FOREST</div>
+      
+      <div class="dashboard">
+        <div class="dash-pod">
+          <div class="pod-tag">⭐ Score</div>
+          <div class="pod-data" id="scoreVal">0</div>
+        </div>
+        <div class="dash-pod">
+          <div class="pod-tag">❤️ Health</div>
+          <div class="safari-hearts" id="heartsVal">❤️❤️❤️</div>
+        </div>
+      </div>
+
+      <div class="expedition-track">
+        <div class="track-fill" id="trackBar"></div>
+      </div>
+
+      <div class="specimen-dome">
+        <span class="specimen-emoji" id="qEmoji">🌿</span>
+        <div class="specimen-clue" id="qText">Analyzing specimen...</div>
+      </div>
+
+      <div class="safari-options" id="options"></div>
+      <div class="ranger-log" id="bubble"></div>
+      <button class="expedite-btn" id="nextBtn" onclick="nextQ()">Advance Track ➡️</button>
+    </div>
+
+    <div id="endScreen" style="display: none;">
+      <span class="safari-avatar" id="endEmoji">🏆</span>
+      <div class="safari-title" id="endTitle">Expedition Complete</div>
+      <div class="pod-data" id="endScore" style="margin: 15px 0; color: #2d6a4f;"></div>
+      <span class="safari-stars" id="endStars">⭐⭐⭐</span>
+      <div class="briefing-scroll" id="endMsg" style="margin-top: 20px;"></div>
+      <button class="safari-btn" style="background: #38b000; box-shadow: 0 5px 0 #1b4332;" onclick="showStartScreen()">🏠 Camp Base (Menu)</button>
+    </div>
+
+  </div>
+
+  <script src="bio-script.js"></script>
+</body>
+</html>

@@ -3,123 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solar System Match Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet" />
+  <title>🪐 Cosmic Match & Drop!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght=700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="wrapper">
 
-  <!-- HOME SCREEN -->
-  <div id="screen-home" class="screen active">
-    <div class="home-header">
-      <div class="game-title">🪐 Solar System Match</div>
-      <div class="game-tagline">Three levels of space exploration await you!</div>
-    </div>
+  <div class="space-bg"></div>
+  <div class="solar-flares"></div>
+  <div class="space-dust"></div>
+  <div class="feedback-pop" id="feedback-pop">🎉</div>
+  <div class="streak-pop" id="streak-pop"><span class="sn" id="streak-num">3</span>🔥 Streak!</div>
 
-    <div class="level-cards">
-
-      <div class="level-card lv1" onclick="startLevel(0)">
-        <span class="lv-badge">Level 1</span>
-        <span class="lv-icon">🌍</span>
-        <div class="lv-name">Explorer</div>
-        <div class="lv-desc">Match each planet to a basic fun fact. Perfect for beginners!</div>
-        <div class="lv-pairs">4 pairs · Easy</div>
-        <div class="completed-badge" id="done-0">⭐ Completed!</div>
+  <div class="screen active" id="start">
+    <div class="logo">🪐 Solar<br>Match & Drop!</div>
+    <div class="sub">Drag the space data card into the matching planetary slot! 🚀</div>
+    <div class="start-card">
+      <h2>Choose your orbit depth 🔭</h2>
+      <div class="level-btns">
+        <button class="lvl-btn" data-lv="1" onclick="pickLevel(1)">
+          <span class="lv-icon">🌍</span><span>Inner Ring</span>
+          <span style="font-size:0.7rem;color:rgba(255,230,200,0.5);font-weight:700">Easy<br>Basics</span>
+        </button>
+        <button class="lvl-btn picked" data-lv="2" onclick="pickLevel(2)">
+          <span class="lvl-btn-icon lv-icon">🪐</span><span>Outer Ring</span>
+          <span style="font-size:0.7rem;color:rgba(255,230,200,0.5);font-weight:700">Medium<br>Structures</span>
+        </button>
+        <button class="lvl-btn" data-lv="3" onclick="pickLevel(3)">
+          <span class="lv-icon">☀️</span><span>Deep Core</span>
+          <span style="font-size:0.7rem;color:rgba(255,230,200,0.5);font-weight:700">Hard<br>Physics</span>
+        </button>
       </div>
-
-      <div class="level-card lv2" id="card-1" onclick="startLevel(1)">
-        <span class="lock-icon" id="lock-1">🔒</span>
-        <span class="lv-badge">Level 2</span>
-        <span class="lv-icon">🚀</span>
-        <div class="lv-name">Astronaut</div>
-        <div class="lv-desc">Match planets to trickier clues about their size, moons & position.</div>
-        <div class="lv-pairs">6 pairs · Medium</div>
-        <div class="completed-badge" id="done-1">⭐ Completed!</div>
+      <div class="sound-row">
+        <button class="sound-toggle" id="sound-btn" onclick="toggleSound()">🔊 Sound ON</button>
       </div>
-
-      <div class="level-card lv3" id="card-2" onclick="startLevel(2)">
-        <span class="lock-icon" id="lock-2">🔒</span>
-        <span class="lv-badge">Level 3</span>
-        <span class="lv-icon">🌌</span>
-        <div class="lv-name">Space Genius</div>
-        <div class="lv-desc">All 8 planets with challenging science facts. Can you ace it?</div>
-        <div class="lv-pairs">8 pairs · Hard</div>
-        <div class="completed-badge" id="done-2">⭐ Completed!</div>
-      </div>
-
-    </div>
-
-    <div class="total-stars">Total stars: <span id="total-stars-count">0</span> / 9 ⭐</div>
-  </div>
-
-  <!-- GAME SCREEN -->
-  <div id="screen-game" class="screen">
-
-    <div class="game-topbar">
-      <button class="back-btn" onclick="goHome()">← Back</button>
-      <div class="level-title-bar" id="level-title-bar">Level 1 · Explorer</div>
-      <div class="pills">
-        <div class="pill">✅ <span id="score">0</span> / <span id="total">4</span></div>
-        <div class="pill">🎯 Tries: <span id="tries">0</span></div>
-      </div>
-    </div>
-
-    <div class="progress-wrap">
-      <div class="progress-label">
-        <span>Progress</span>
-        <span id="prog-pct">0%</span>
-      </div>
-      <div class="progress-track">
-        <div class="progress-fill" id="progress-fill" style="width:0%"></div>
-      </div>
-    </div>
-
-    <p class="instructions">Drag a <span>planet</span> from the left → drop it on the matching <span>fact</span> on the right</p>
-
-    <div class="game-grid">
-      <div>
-        <div class="col-label">🌍 Planets</div>
-        <div class="planet-list" id="planet-list"></div>
-      </div>
-      <div>
-        <div class="col-label">📖 Facts</div>
-        <div class="drop-list" id="drop-list"></div>
-      </div>
-    </div>
-
-    <div class="result-banner" id="result-banner">
-      <div class="result-stars">
-        <div class="stars-earned" id="stars-earned"></div>
-      </div>
-      <div class="result-title" id="result-title"></div>
-      <div class="result-sub" id="result-sub"></div>
-      <div class="result-btns" id="result-btns"></div>
-    </div>
-
-  </div>
-
-  <!-- WINNER SCREEN -->
-  <div id="screen-winner" class="screen">
-    <div class="winner-wrap">
-      <span class="winner-icon">🏆</span>
-      <div class="winner-title">You're a Space Genius!</div>
-      <div class="winner-sub">You completed all 3 levels. The solar system holds no secrets from you!</div>
-      <div class="winner-stats">
-        <div class="stat-box">
-          <div class="stat-num" id="win-stars">0</div>
-          <div class="stat-label">Stars Earned</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num" id="win-tries">0</div>
-          <div class="stat-label">Total Tries</div>
-        </div>
-      </div>
-      <button class="btn btn-primary" onclick="fullReset()">🔄 Play Again from Start</button>
+      <button class="btn-play" onclick="startGame()">🚀 Launch Mission!</button>
     </div>
   </div>
 
-</div>
-<script src="script.js"></script>
+  <div class="screen" id="game">
+    <div class="hud">
+      <div class="hud-item">⭐ <span id="hud-score">0</span></div>
+      <div class="hud-item">Matches <span id="hud-q">1</span>/5</div>
+      <div class="hud-item">❤️ <span id="hud-lives">❤️❤️❤️</span></div>
+    </div>
+    
+    <div class="timer-wrap">
+      <div class="timer-fill" id="timer-fill" style="width:100%"></div>
+    </div>
+
+    <div class="drag-container">
+      <p style="font-size: 0.85rem; color: var(--orange); font-weight: 800; margin-bottom: 5px;">DRAG THIS CARD 👇</p>
+      <div class="q-card draggable-card" id="draggable-card" draggable="true">
+        <div class="q-badge" id="q-badge">Telemetry 🪐</div>
+        <div class="q-text" id="q-text">Loading item...</div>
+      </div>
+    </div>
+
+    <div class="dropzone-grid" id="dropzone-grid"></div>
+  </div>
+
+  <div class="screen" id="win">
+    <div class="win-card">
+      <div class="win-trophy" id="win-trophy">🏆</div>
+      <div class="win-title" id="win-title">Incredible!</div>
+      <div class="win-sub" id="win-sub">You matched all celestial points!</div>
+      <div class="win-stars" id="win-stars">⭐⭐⭐</div>
+      <div class="stats-row">
+        <div class="stat-box"><span class="sv sv-orange" id="ws-c">0</span><span class="sl">Correct</span></div>
+        <div class="stat-box"><span class="sv sv-coral" id="ws-w">0</span><span class="sl">Wrong</span></div>
+        <div class="stat-box"><span class="sv sv-gold" id="ws-s">0</span><span class="sl">Score</span></div>
+      </div>
+      <button class="btn-again" onclick="startGame()">🚀 Fly Again!</button>
+      <button class="btn-menu" onclick="showMenu()">Back to Control Room</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,305 @@
+/* ── Vibrant Jungle Theme Reset ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: #d8f3dc;
+  /* Playful Jungle Leaf Dot Matrix Pattern */
+  background-image: radial-gradient(#74c69d 2px, transparent 2px);
+  background-size: 30px 30px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ── Thick-Border Cartoon Card ── */
+.safari-card {
+  background: #ffffff;
+  border: 5px solid #1b4332;
+  border-radius: 32px;
+  padding: 35px 25px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 12px 0 #112a1f, 0 15px 30px rgba(27, 67, 50, 0.15);
+  text-align: center;
+}
+
+/* ── Typography styling ── */
+.safari-title {
+  font-family: 'Jua', sans-serif;
+  font-size: 3.2rem;
+  color: #1b4332;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.safari-subtitle {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #40916c;
+  margin-bottom: 25px;
+}
+
+.safari-avatar {
+  font-size: 5.5rem;
+  display: block;
+  margin-bottom: 10px;
+  animation: compassSway 3s ease-in-out infinite alternate;
+}
+
+@keyframes compassSway {
+  from { transform: rotate(-10deg); }
+  to { transform: rotate(10deg); }
+}
+
+/* ── Audio Control Component ── */
+.audio-deck {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.safari-audio-btn {
+  background: #52b788;
+  border: none;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  padding: 8px 22px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #2d6a4f;
+  transition: all 0.1s;
+}
+
+.safari-audio-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #2d6a4f;
+}
+
+.safari-audio-btn.muted {
+  background: #95a5a6;
+  box-shadow: 0 4px 0 #7f8c8d;
+}
+
+/* ── Ranger Mission Briefing Scroll ── */
+.briefing-scroll {
+  background: #f4fbf7;
+  border: 3px solid #ffb703;
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 25px;
+}
+
+.briefing-scroll p {
+  color: #1b4332;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/* ── Core Action Buttons ── */
+.safari-btn {
+  width: 100%;
+  background: #ffb703;
+  color: #1b4332;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.6rem;
+  border: none;
+  padding: 14px;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #fb8500;
+  transition: all 0.1s;
+}
+
+.safari-btn:hover {
+  transform: translateY(-2px);
+}
+
+.safari-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #fb8500;
+}
+
+/* ── Current Level Header Badge ── */
+.level-indicator {
+  background: #1b4332;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border-radius: 50px;
+  display: inline-block;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* ── Dashboard Stats ── */
+.dashboard {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dash-pod {
+  flex: 1;
+  background: #f7fbf8;
+  padding: 10px;
+  border-radius: 16px;
+  border: 2px solid #d8f3dc;
+}
+
+.pod-tag {
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: #95d5b2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pod-data {
+  font-family: 'Jua', sans-serif;
+  font-size: 2rem;
+  color: #1b4332;
+  line-height: 1.1;
+}
+
+.safari-hearts {
+  font-size: 1.3rem;
+  margin-top: 2px;
+}
+
+/* ── Linear Track Progress ── */
+.expedition-track {
+  width: 100%;
+  height: 14px;
+  background: #e9ecef;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border: 2px solid #1b4332;
+}
+
+.track-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ffb703, #38b000);
+  transition: width 0.4s ease-out;
+}
+
+/* ── Specimen Observation Dome ── */
+.specimen-dome {
+  background: #fbfbfb;
+  border-radius: 24px;
+  padding: 22px;
+  margin-bottom: 22px;
+  border: 3px dashed #74c69d;
+}
+
+.specimen-emoji {
+  font-size: 4.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.specimen-clue {
+  font-size: 1.2rem;
+  color: #2d3748;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ── Alternative Multiple Choice Tiles ── */
+.safari-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.safari-tile {
+  background: white;
+  border: 3px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 14px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #2d3748;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.safari-tile:hover:not(:disabled) {
+  background: #fcfdfd;
+  border-color: #52b788;
+}
+
+/* Correct/Incorrect UI Decorators */
+.safari-tile.safari-correct {
+  background: #d8f3dc !important;
+  border-color: #38b000 !important;
+  color: #1b4332 !important;
+}
+
+.safari-tile.safari-wrong {
+  background: #f8d7da !important;
+  border-color: #dc3545 !important;
+  color: #721c24 !important;
+}
+
+/* ── Ranger Logs Message Bubble ── */
+.ranger-log {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: none;
+}
+
+.ranger-log.log-secured { display: block; background: #d8f3dc; color: #1b4332; }
+.ranger-log.log-threatened { display: block; background: #f8d7da; color: #721c24; }
+
+/* ── Next Track Control ── */
+.expedite-btn {
+  display: none;
+  margin-top: 15px;
+  width: 100%;
+  background: #1b4332;
+  color: white;
+  font-family: 'Jua', sans-serif;
+  font-size: 1.4rem;
+  border: none;
+  padding: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #0b1a14;
+}
+
+.safari-stars {
+  font-size: 2.5rem;
+  display: block;
+}
+
+/* ── Burst Particle Explodes ── */
+.jungle-sparkle {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.8rem;
+  z-index: 500;
+  animation: leafFloat 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes leafFloat {
+  0% { opacity: 1; transform: scale(0.6) translateY(0); }
+  100% { opacity: 0; transform: scale(1.2) translateY(-70px) rotate(30deg); }
+}
